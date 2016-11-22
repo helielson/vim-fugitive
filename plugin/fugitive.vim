@@ -755,6 +755,11 @@ function! s:Status() abort
     wincmd P
     setlocal foldmethod=syntax foldlevel=1
     nnoremap <buffer> <silent> q    :<C-U>bdelete<CR>
+    wincmd s
+    wincmd j
+    execute 'q'
+    wincmd k
+    normal gg
   catch /^fugitive:/
     return 'echoerr v:errmsg'
   endtry
